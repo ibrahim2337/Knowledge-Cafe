@@ -1,6 +1,6 @@
 import React from "react";
 
-const BlogCard = ({ blog }) => {
+const BlogCard = ({ blog, readingTime, setReadingTime }) => {
   const {
     id,
     title,
@@ -8,7 +8,7 @@ const BlogCard = ({ blog }) => {
     authorImg,
     authorName,
     publishedDate,
-    readingTime,
+    timeNeed,
     tags,
   } = blog;
   console.log(blog);
@@ -34,20 +34,18 @@ const BlogCard = ({ blog }) => {
                   <p className="mx-2 font-semibold text-gray-800 ">
                     {authorName}
                   </p>
-                  <p className="mx-2 text-xs text-gray-800 ">
-                    {publishedDate}
-                  </p>
+                  <p className="mx-2 text-xs text-gray-800 ">{publishedDate}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <p className="text-gray-800">0{readingTime} min read</p>{" "}
+                <p className="text-gray-800">0{timeNeed} min read</p>{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-5 h-5"
+                  className="w-5 h-5 hover:cursor-pointer hover:text-blue-500"
                 >
                   <path
                     strokeLinecap="round"
@@ -65,7 +63,7 @@ const BlogCard = ({ blog }) => {
                 {title}
               </h3>
               <p className="text-gray-600">{tags}</p>
-              <button className="text-sm text-blue-900 capitalize rounded-sm hover:underline">
+              <button onClick={() => setReadingTime(readingTime + timeNeed)} className="text-sm text-blue-800 hover:text-blue-500 capitalize rounded-sm underline">
                 Mark as read
               </button>
             </div>

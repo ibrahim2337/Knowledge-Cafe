@@ -6,7 +6,7 @@
         "authorImg": "https://i.ibb.co/wRyRHJv/author1.jpg",
         "authorName": "Paul Knulst",
         "publishedDate": "Mar 14 (4 Days ago)",
-        "readingTime": 5,
+        "timeNeed": 5,
         "tags":"#beginners  #programming"
 
       },
@@ -17,7 +17,7 @@
         "authorImg": "https://i.ibb.co/QbzVvwK/author2.jpg",
         "authorName": "Reed Barger",
         "publishedDate": "Mar 25 (8 Days ago)",
-        "readingTime": 3,
+        "timeNeed": 3,
         "tags":"#react  #vs-code"
 
       },
@@ -28,7 +28,7 @@
         "authorImg": "https://i.ibb.co/yXTL5SJ/author3.webp",
         "authorName": "Shubh Sharma",
         "publishedDate": "Mar 10 (2 Days ago)",
-        "readingTime": 6,
+        "timeNeed": 6,
         "tags":"#chat-gpt  #programming"
 
       },
@@ -39,7 +39,7 @@
         "authorImg": "https://i.ibb.co/L5rv3gh/author4.jpg",
         "authorName": "Tal Riginiano",
         "publishedDate": "Mar 20 (7 Days ago)",
-        "readingTime": 2,
+        "timeNeed": 2,
         "tags":"#javascript  #programming"
 
       }
