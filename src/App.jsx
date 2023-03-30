@@ -1,4 +1,5 @@
-import Navbar from "./component/Navber/Navbar";
+import Blogs from "./component/Blogs/Blogs";
+import Navbar from "./component/Navbar/Navbar";
 
 function App() {
   return (
@@ -7,9 +8,10 @@ function App() {
         <Navbar />
       </header>
       <hr />
-      <main className="grid grid-cols-12">
-        <div className="col-span-9"></div>
-
+      <main className="grid grid-cols-12 gap-5 py-5">
+        <div className="col-span-9">
+          <Blogs />
+        </div>
         <div className="col-span-3"></div>
       </main>
     </div>
