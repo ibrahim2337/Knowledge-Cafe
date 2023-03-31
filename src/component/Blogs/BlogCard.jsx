@@ -1,8 +1,14 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 
-const BlogCard = ({ blog, readingTime, setReadingTime }) => {
+const BlogCard = ({
+  blog,
+  readingTime,
+  setReadingTime,
+  bookmarkItems,
+  setBookmarkItems,
+}) => {
   const {
-    id,
     title,
     thumbnail,
     authorImg,
@@ -11,7 +17,24 @@ const BlogCard = ({ blog, readingTime, setReadingTime }) => {
     timeNeed,
     tags,
   } = blog;
-  console.log(blog);
+
+  const addToBookmark = (blog) => {
+    if (bookmarkItems.length === 0) {
+      setBookmarkItems([...bookmarkItems, blog]);
+      toast.success("Bookmark Added");
+    } else {
+      const alreadyExist = bookmarkItems.some((e) => e?.title === blog?.title);
+      if (!alreadyExist) {
+        setBookmarkItems([...bookmarkItems, blog]);
+        toast.success("Bookmark Added");
+      } else {
+        toast.error("Already Bookmarked");
+      }
+    }
+  };
+
+  const timeAdded = () => toast.success("Time Added Successfully");
+
   return (
     <div>
       <div className="overflow-hidden bg-white rounded-lg shadow-md pb-5">
@@ -40,6 +63,9 @@ const BlogCard = ({ blog, readingTime, setReadingTime }) => {
               <div className="flex items-center gap-2">
                 <p className="text-gray-800">0{timeNeed} min read</p>{" "}
                 <svg
+                  onClick={() => {
+                    addToBookmark(blog);
+                  }}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -63,7 +89,12 @@ const BlogCard = ({ blog, readingTime, setReadingTime }) => {
                 {title}
               </h3>
               <p className="text-gray-600">{tags}</p>
-              <button onClick={() => setReadingTime(readingTime + timeNeed)} className="text-sm text-blue-800 hover:text-blue-500 capitalize rounded-sm underline">
+              <button
+                onClick={() => {
+                  setReadingTime(readingTime + timeNeed), timeAdded();
+                }}
+                className="text-sm text-blue-800 hover:text-blue-500 capitalize rounded-sm underline"
+              >
                 Mark as read
               </button>
             </div>
