@@ -22,10 +22,13 @@ const FAQ = () => {
 
           <details className="w-full border rounded-lg">
             <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">
-            How to works useState?
+              How to works useState?
             </summary>
             <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
-            UseState returns a pair of (2) values and this pair of values is returned as an array of type containing 2 elements. If we console. If you see its return with log, it will be more convenient to understand.{" "}
+              UseState returns a pair of (2) values and this pair of values is
+              returned as an array of type containing 2 elements. If we console.
+              If you see its return with log, it will be more convenient to
+              understand.{" "}
             </p>
           </details>
 
@@ -54,6 +57,7 @@ const FAQ = () => {
               React will efficiently update and render just the right component
               when your data changes. The declarative view makes your code more
               predictable and easier to debug.{" "}
+              
             </p>
           </details>
         </div>
