@@ -27,10 +27,10 @@ const FAQ = () => {
           </details>
           <details className="w-full border rounded-lg">
             <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">
-            
+            What does useEffect do other than load data?
             </summary>
             <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
-           {" "}
+            By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.{" "}
             </p>
           </details>
         </div>
